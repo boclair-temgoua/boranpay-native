@@ -1,7 +1,7 @@
-import { icons, images } from "./";
+import { icons, images } from "./"
 
 const myProfile = {
-    name: "ByProgrammers",
+    name: "Boclair Temgoua",
     profile_image: images.profile,
     address: "No. 88, Jln Padungan, Kuching"
 }
@@ -72,45 +72,33 @@ const menu = [
     {
         id: 1,
         name: "Featured",
-        list: [
-            hamburger, hotTacos, vegBiryani,
-        ]
+        list: [hamburger, hotTacos, vegBiryani]
     },
     {
         id: 2,
         name: "Nearby you",
-        list: [
-            hamburger, vegBiryani, wrapSandwich,
-        ]
+        list: [hamburger, vegBiryani, wrapSandwich]
     },
     {
         id: 3,
         name: "Popular",
-        list: [
-            hamburger, hotTacos, wrapSandwich,
-        ]
+        list: [hamburger, hotTacos, wrapSandwich]
     },
     {
         id: 4,
         name: "Newest",
-        list: [
-            hamburger, hotTacos, vegBiryani,
-        ]
+        list: [hamburger, hotTacos, vegBiryani]
     },
     {
         id: 5,
         name: "Trending",
-        list: [
-            hamburger, vegBiryani, wrapSandwich,
-        ]
+        list: [hamburger, vegBiryani, wrapSandwich]
     },
     {
         id: 6,
         name: "Recommended",
-        list: [
-            hamburger, hotTacos, wrapSandwich,
-        ]
-    },
+        list: [hamburger, hotTacos, wrapSandwich]
+    }
 
 ]
 
@@ -118,5 +106,5 @@ const menu = [
 export default {
     myProfile,
     categories,
-    menu,
+    menu
 }

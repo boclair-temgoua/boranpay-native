@@ -3,38 +3,38 @@ const screens = {
     home: "Home",
     search: "Search",
     cart: "Cart",
-    navigationfavourite: "Favourite",
+    favourite: "Favourite",
     notification: "Notification",
-    my_wallet: "My wallet"
+    wallet: "My wallet"
 }
 
 const bottom_tabs = [
     {
         id: 0,
-        label: screens.home,
+        label: screens.home
     },
     {
         id: 1,
-        label: screens.search,
+        label: screens.search
     },
     {
         id: 2,
-        label: screens.cart,
+        label: screens.cart
     },
     {
         id: 3,
-        label: screens.favourite,
+        label: screens.favourite
     },
     {
         id: 4,
-        label: screens.notification,
-    },
+        label: screens.notification
+    }
 ]
 
 const delivery_time = [
     {
         id: 1,
-        label: "10 Mins",
+        label: "10 Mins"
     },
     {
         id: 2,
@@ -49,23 +49,23 @@ const delivery_time = [
 const ratings = [
     {
         id: 1,
-        label: 1,
+        label: 1
     },
     {
         id: 2,
-        label: 2,
+        label: 2
     },
     {
         id: 3,
-        label: 3,
+        label: 3
     },
     {
         id: 4,
-        label: 4,
+        label: 4
     },
     {
         id: 5,
-        label: 5,
+        label: 5
     }
 ]
 

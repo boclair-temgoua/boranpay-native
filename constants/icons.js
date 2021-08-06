@@ -43,5 +43,5 @@ export default {
     setting,
     star,
     wallet,
-    help,
+    help
 }

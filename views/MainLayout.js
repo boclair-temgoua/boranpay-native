@@ -1,20 +1,64 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     View,
-    Text
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    TouchableWithoutFeedback,
+    Image,
+    FlatList,
+    Touchable
 } from 'react-native'
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    withTiming
+} from 'react-native-reanimated'
+import { useDispatch, useSelector } from 'react-redux'
+import { setSelectedTab } from '../redux/actions/tabAction'
 
-const MainLayout = () => {
+import {
+    Home,
+    Search, CartTab,
+    Favourite,
+    Notification
+} from '../screens'
+
+import {
+    COLORS,
+    FONTS,
+    SIZES,
+    icons,
+    constants,
+    dummyData
+} from '../constants'
+import { Header } from '../composents'
+
+import LinearGradient from 'react-native-linear-gradient'
+
+const MainLayout = ({ drawerAnimationStyle }) => {
+    const selectedTab = useSelector(state => state.tabReducer.selectedTab)
+    const dispasth = useDispatch()
+
+
+    useEffect(() => {
+        dispasth(setSelectedTab(constants.screens.home))
+    }, [constants.screens.home])
+
     return (
-        <View
+        <Animated.View
             style={{
                 flex: 1,
                 alignItems: 'center',
-                justifyContent: 'center'
+                backgroundColor: COLORS.white,
+                ...drawerAnimationStyle
             }}
         >
-            <Text>MainLayout</Text>
-        </View>
+            {/** Content */}
+            <View style={{ flex: 1 }}>
+                <Text>MainLayout</Text>
+            </View>
+        </Animated.View>
     )
 }
 
