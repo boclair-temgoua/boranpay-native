@@ -1,0 +1,45 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
+import React from 'react'
+
+// // ** Redux Imports
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+
+
+import { createStackNavigator } from "@react-navigation/stack"
+import { NavigationContainer } from '@react-navigation/native'
+
+import { MainLayout } from './views'
+
+
+const Stack = createStackNavigator()
+
+const App = () => {
+
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+          initialRouteName={'Home'}
+        >
+          <Stack.Screen
+            name="Home"
+            component={MainLayout}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
+  )
+}
+
+export default App
