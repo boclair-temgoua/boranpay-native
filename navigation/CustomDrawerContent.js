@@ -12,7 +12,7 @@ import {
 } from '@react-navigation/drawer'
 import { COLORS, constants, dummyData, FONTS, icons, SIZES } from '../constants'
 import CustomDrawerItem from './CustomDrawerItem'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const CustomDrawerContent = ({ navigation, selectedTab, setSelectedTab }) => {
     const dispasth = useDispatch()
@@ -28,33 +28,6 @@ const CustomDrawerContent = ({ navigation, selectedTab, setSelectedTab }) => {
                     paddingHorizontal: SIZES.radius
                 }}
             >
-                {/** Close */}
-                <View
-                    style={{
-                        alignItems: 'flex-start',
-                        justifyContent: 'center'
-                    }}
-                >
-                    <TouchableOpacity
-                        style={{
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}
-                        onPress={() => navigation.closeDrawer()}
-                    >
-                        <Image
-                            source={icons.cross}
-                            style={{
-                                height: 35,
-                                width: 35,
-                                tintColor: COLORS.white
-                            }}
-                        />
-
-                    </TouchableOpacity>
-
-                </View>
-
                 {/** Profile */}
                 <TouchableOpacity
                     style={{
@@ -80,7 +53,6 @@ const CustomDrawerContent = ({ navigation, selectedTab, setSelectedTab }) => {
                     </View>
                 </TouchableOpacity>
 
-
                 {/** Drawer Items */}
                 <View
                     style={{
@@ -103,7 +75,7 @@ const CustomDrawerContent = ({ navigation, selectedTab, setSelectedTab }) => {
                     <CustomDrawerItem
                         label={constants.screens.wallet}
                         icon={icons.wallet}
-                        isFocused={selectedTab === constants.screens.wallet}
+                        isFocused={selectedTab == constants.screens.wallet}
                         onPress={() => {
                             dispasth(setSelectedTab(constants.screens.wallet))
                             navigation.navigate("MainLayout")
@@ -133,7 +105,6 @@ const CustomDrawerContent = ({ navigation, selectedTab, setSelectedTab }) => {
                     />
                     {/** Favorite */}
 
-
                     <View
                         style={{
                             height: 1,
@@ -142,16 +113,19 @@ const CustomDrawerContent = ({ navigation, selectedTab, setSelectedTab }) => {
                             backgroundColor: COLORS.lightGray1
                         }}
                     />
+
                     {/** Track */}
                     <CustomDrawerItem
                         label={"Track Your Order"}
                         icon={icons.location}
                     />
+
                     {/** Coupn */}
                     <CustomDrawerItem
                         label={"Coupons"}
                         icon={icons.coupon}
                     />
+
                     {/** Setting */}
                     <CustomDrawerItem
                         label={"Setting"}

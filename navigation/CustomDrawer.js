@@ -1,28 +1,19 @@
 import React, { useState } from 'react'
 import {
-    View,
-    Image,
-    TouchableOpacity,
-    Text
+    View
 } from 'react-native'
 
 import {
-    createDrawerNavigator,
-    DrawerContentScrollView
+    createDrawerNavigator
 } from '@react-navigation/drawer'
 import { MainLayout } from '../views'
 
 import {
-    COLORS,
-    FONTS,
-    SIZES,
-    constants,
-    icons,
-    dummyData
+    COLORS
 } from '../constants'
 import CustomDrawerContent from './CustomDrawerContent'
 import Animated from 'react-native-reanimated'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { setSelectedTab } from '../redux/actions/tabAction'
 
 
@@ -80,9 +71,8 @@ const CustomDrawer = () => {
                 <Drawer.Screen name="MainLayout">
                     {props => <MainLayout {...props}
                         drawerAnimationStyle={AnimatedStyle}
+                        setSelectedTab={setSelectedTab}
                     />}
-                    {/* 
-                    setSelectedTab={setSelectedTab} */}
                 </Drawer.Screen>
             </Drawer.Navigator>
         </View>
